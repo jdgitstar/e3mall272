@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>cn.itcast.e3mall</groupId>
+    <artifactId>e3mall-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>cn.itcast.e3mall</groupId>
+  <artifactId>e3mall-manager</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>后台父工程</name>
+  <description>聚合后台管理系统</description>
+  <modules>
+  	<module>e3mall-manager-pojo</module>
+  	<module>e3mall-manager-service</module>
+  	<module>e3mall-manager-dao</module>
+  	<module>e3mall-manager-web</module>
+  </modules>
+  	
+  	<!--配置依赖关系  -->
+  	<dependencies>
+  		<dependency>
+  			<groupId>cn.itcast.e3mall</groupId>
+  			<artifactId>e3mall-common</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+  		</dependency>
+  	</dependencies>
+  	<build>
+  		<plugins>
+  			<plugin>
+  				<groupId>org.apache.tomcat.maven</groupId>
+  				<artifactId>tomcat7-maven-plugin</artifactId>
+  				<configuration>
+  					<path>/e3-web</path>
+  					<uriEncoding>UTF-8</uriEncoding>
+  					<port>80</port>
+  					<server>tomcat7</server>
+  					<finalName>e3-web</finalName>
+  				</configuration>
+  			</plugin>
+  		</plugins>
+  	</build>
+</project>
